@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/screens/details/details_screen.dart';
 import '../../../constants.dart';
 
 class RecommendedPlants extends StatelessWidget {
@@ -17,14 +18,28 @@ class RecommendedPlants extends StatelessWidget {
             title: "Samantha",
             country: "Russia",
             price: 440,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(),
+                ),
+              );
+            },
           ),
           RecommendedPlantCard(
             image: "assets/images/image_2.png",
             title: "Angelica",
             country: "Russia",
             price: 780,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(),
+                ),
+              );
+            },
           ),
           RecommendedPlantCard(
             image: "assets/images/image_3.png",
@@ -44,11 +59,13 @@ class RecommendedPlantCard extends StatelessWidget {
     Key? key,
     required this.image,
     required this.title,
-    required this.country, required this.price, required this.press,
+    required this.country,
+    required this.price,
+    required this.press,
   }) : super(key: key);
 
   final String image, title, country;
-   final int price;
+  final int price;
   final void Function() press;
 
   @override
